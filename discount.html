@@ -37,38 +37,6 @@
         <input type="button" class="btn btn-sm btn-success" onclick="discount()" value="Apply discount">
     </form>
     <p id="result">"The result can be seen here!"</p>
-    <script>
-
-        function resolveForm() {
-            console.log("Getting form values")
-            age = document.getElementById("form1_age").value
-            nick = document.getElementById("form1_nick").value
-            confirmed = confirm("Are these the values? " + age + " and " + nick)
-
-            out = document.getElementById("result")
-            if (confirmed) {
-                out.innerHTML = "Values were confirmed"
-            } else {
-                out.innerHTML = "Values were not confirmed"
-            }
-        }
-    </script>
-    <script>
-        let correct = 0, wrong = 0
-        function checkGuess() {
-            age = document.getElementById("form1_age").value
-            nick = document.getElementById("form1_nick").value
-            out = document.getElementById("result")
-            if (age == nick) {
-                alert("You got it right")
-                correct = correct + 1
-            } else {
-                alert("Wrong Musician")
-                wrong = wrong + 1
-            }
-            out.innerHTML = "Number of Right Count is " + correct + " Number of Wrong Count is " + wrong;
-        }
-    </script>
 
     <script>
         function discount() {
@@ -81,3 +49,45 @@
             document.getElementById("result").innerHTML = "Discounted amounts for base " + baseamount + " are " + result;
         }
     </script>
+    <div class="container">
+        <form>
+            <div>
+                <label for="one">*</label>
+                <input type="radio" id="one" class="input-form" name="operator" onclick="chooseop()" value="times">
+                <br>
+            </div>
+            <div>
+                <label for="two">/</label>
+                <input type="radio" id="two" class="input-form" name="operator" onclick="chooseop()" value="divide">
+                <br>
+            </div>
+            <div>
+                <label for="three">**</label>
+                <input type="radio" id="three" class="input-form" name="operator" onclick="chooseop()" value="exponent">
+                <br>
+            </div>
+        </form>
+        <p id="results">"The result can be seen here!"</p>
+    </div>
+    <script>
+        function chooseop(){
+            baseamount = document.getElementById("baseamount").value
+            discountamount = document.getElementById("discountamount").value
+            times=document.getElementById("one").checked
+            divide=document.getElementById("two").checked
+            exponent=document.getElementById("three").checked
+            let results=0;
+            if(times){
+                results = baseamount*discountamount;
+            }
+            else if(divide){
+                results = baseamount / discountamount;
+            }
+            else if(exponent){
+                results = baseamount ** discountamount;
+            }
+            document.getElementById("results").innerHTML = results
+        }
+    </script>
+    
+</body>
