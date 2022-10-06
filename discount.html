@@ -37,18 +37,7 @@
         <input type="button" class="btn btn-sm btn-success" onclick="discount()" value="Apply discount">
     </form>
     <p id="result">"The result can be seen here!"</p>
-
-    <script>
-        function discount() {
-            baseamount = document.getElementById("baseamount").value
-            discountamount = document.getElementById("discountamount").value
-            let result = "";
-            for (i = 1; i <= 5; i++) {
-                result = result + ((i * baseamount) - (i * baseamount * discountamount) / 100) + " ";
-            }
-            document.getElementById("result").innerHTML = "Discounted amounts for base " + baseamount + " are " + result;
-        }
-    </script>
+    
     <div class="container">
         <form>
             <div>
@@ -69,6 +58,18 @@
         </form>
         <p id="results">"The result can be seen here!"</p>
     </div>
+
+    <script>
+        function discount() {
+            baseamount = document.getElementById("baseamount").value
+            discountamount = document.getElementById("discountamount").value
+            let result = "";
+            for (i = 1; i <= 5; i++) {
+                result = result + ((i * baseamount) - (i * baseamount * discountamount) / 100) + " ";
+            }
+            document.getElementById("result").innerHTML = "Discounted amounts for base " + baseamount + " are " + result;
+        }
+    </script>
     <script>
         function chooseop(){
             baseamount = document.getElementById("baseamount").value
