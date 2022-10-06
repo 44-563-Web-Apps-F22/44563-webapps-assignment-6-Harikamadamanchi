@@ -56,23 +56,17 @@
             let bydomestic = document.getElementById("Domestic").checked
             let byresort = document.getElementById("Resort").checked
             if (bytravel) {
-                my_vacation.Travel = true;
-            }
+                my_vacation.Travel = true;}
             else {
-                my_vacation.Travel = false;
-            }
+                my_vacation.Travel = false;}
             if (bydomestic) {
-                my_vacation.Domestic = true;
-            }
+                my_vacation.Domestic = true;}
             else {
-                my_vacation.Domestic = false;
-            }
+                my_vacation.Domestic = false;}
             if (byresort) {
-                my_vacation.Resort = true;
-            }
+                my_vacation.Resort = true;}
             else {
-                my_vacation.Resort = false;
-            }
+                my_vacation.Resort = false;}
             document.getElementById("results").innerHTML = JSON.stringify(my_vacation)
         }
     </script>
